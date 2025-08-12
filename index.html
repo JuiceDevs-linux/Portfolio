@@ -36,6 +36,24 @@
         transform: scale(1.05);
     }
 
+    /* Image Section */
+    .profile-image {
+        width: 100%;
+        max-height: 350px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .profile-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
     /* Sections */
     section {
         max-width: 1000px;
@@ -100,9 +118,14 @@
     <h1>Juice Portfolio</h1>
 </header>
 
+<!-- Profile Image -->
+<div class="profile-image">
+    <img src="https://i.ibb.co/V6WTN6J/4ec480dab0d50325a027e77b4ae37799.png" alt="Juice Profile Picture">
+</div>
+
 <section>
     <h2>About Juice</h2>
-    <p>Juice is a passionate Roblox LUA scripter and programmer from Canada.
+    <p>Juice is a passionate Roblox LUA scripter and programmer from the Juice Box era. 
        He’s created multiple polished game systems and specializes in UI design, gameplay scripting, 
        and innovative player mechanics.</p>
 </section>
