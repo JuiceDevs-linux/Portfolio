@@ -1,63 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juice Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juice Portfolio</title>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* Glazed Header */
+    header {
+        position: sticky;
+        top: 0;
+        padding: 15px 30px;
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: flex-end;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+        z-index: 10;
+    }
+    header h1 {
+        color: #0ff;
+        font-size: 1.5rem;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        transition: transform 0.3s ease;
+    }
+    header h1:hover {
+        transform: scale(1.05);
+    }
+
+    /* Sections */
+    section {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 20px;
+        animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        border-bottom: 2px solid #0ff;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    /* Glazed Cards */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    .project-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    }
+    .project-card h3 {
+        color: #0ff;
+        margin-bottom: 10px;
+    }
+    .project-card p {
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        font-size: 0.8rem;
+        color: #777;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <div class="logo">Juice Portfolio</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Hey, I'm Juice</h1>
-        <p>Roblox Lua Developer | Game Scripter | Visionary</p>
-    </section>
+<header>
+    <h1>Juice Portfolio</h1>
+</header>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            I'm Juice — a Roblox developer specializing in Lua scripting and creative gameplay mechanics.  
-            I've worked on multiple roleplay projects and have a knack for crafting unique game experiences.
-        </p>
-        <p><strong>Skills:</strong> Lua, Roblox Studio, UI Design, Game Systems</p>
-    </section>
+<section>
+    <h2>About Juice</h2>
+    <p>Juice is a passionate Roblox LUA scripter and programmer from Canada.
+       He’s created multiple polished game systems and specializes in UI design, gameplay scripting, 
+       and innovative player mechanics.</p>
+</section>
 
-    <section id="projects" class="projects">
-        <h2>Projects & Work</h2>
+<section>
+    <h2>Prior Work</h2>
+    <div class="projects">
         <div class="project-card">
-            <h3>HealthBars System</h3>
-            <p>Custom health bar with smooth color transitions and animated health changes.</p>
+            <h3>HealthBars</h3>
+            <p>Dynamic health bar system with smooth animations and customizable styles.</p>
         </div>
         <div class="project-card">
             <h3>Bird’s Eye Camera</h3>
-            <p>Top-down camera system for roleplay and tactical games.</p>
+            <p>Top-down camera view with smooth tracking, perfect for strategy and overview games.</p>
         </div>
         <div class="project-card">
-            <h3>2D Movement System</h3>
-            <p>Restricts movement to four directions for retro-style games.</p>
+            <h3>2D Movement</h3>
+            <p>Restricts character movement to four directions, creating a 2D game feel.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Projects & Collaborations</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Void Roleplay</h3>
+            <p>Lead scripter for core game systems and UI elements.</p>
         </div>
         <div class="project-card">
-            <h3>Roleplay Projects</h3>
-            <p>Worked on Void Roleplay, MedPulse Roleplay, and Extra Life Roleplay as a lead scripter.</p>
+            <h3>MedPulse Roleplay</h3>
+            <p>Designed advanced health tracking and medical simulation scripts.</p>
         </div>
-    </section>
+        <div class="project-card">
+            <h3>Extra Life Roleplay</h3>
+            <p>Optimized roleplay framework and implemented interactive features.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: juice.dev@example.com</p>
-        <p>Discord: Juice#1234</p>
-    </section>
+<footer>
+    &copy; 2025 Juice Portfolio. All rights reserved.
+</footer>
 
-    <footer>
-        <p>© 2025 Juice Portfolio</p>
-    </footer>
 </body>
 </html>
